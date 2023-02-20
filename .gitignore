@@ -1,0 +1,53 @@
+# maven ignore
+*target/
+!tools/*.jar
+*.war
+*.zip
+*.tar
+*catalina.home_IS_UNDEFINED/
+
+# eclipse ignore
+*.settings/
+.project
+.classpath
+
+# idea ignore
+.idea/
+*.ipr
+*.iml
+*.iws
+
+generatorConfig.xml
+
+# temp ignore
+files/
+logs/
+*.log
+*.cache
+*.diff
+*.patch
+*.tmp
+
+# system ignore
+.DS_Store
+Thumbs.db
+
+sublime-project
+sublime-project.sublime-workspace
+/scheduler/files/
+.mvn
+nulltars_client.log.*
+dbCache/
+sdklog/
+/logs
+db/SCHEMA
+http/
+json/
+*rebel*
+rebel.xml
+.idea/.gitignore
+.idea/inspectionProfiles/
+.idea/misc.xml
+.idea/modules.xml
+.idea/sinopharm-cloud.iml
+.idea/vcs.xml
