@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <parent>
+        <artifactId>fyy-cloud</artifactId>
+        <groupId>com.fyy</groupId>
+        <version>1.0</version>
+    </parent>
+    <modelVersion>4.0.0</modelVersion>
+
+    <artifactId>fyy-base-common</artifactId>
+    <packaging>pom</packaging>
+
+    <modules>
+        <module>common-spring-tools</module>
+        <module>common-security</module>
+        <module>common-mybatis</module>
+        <module>common-swagger</module>
+    </modules>
+
+    <properties>
+        <knife4j.version>3.0.3</knife4j.version>
+        <guava.version>20.0</guava.version>
+
+        <org.apache.poi.version>3.17</org.apache.poi.version>
+    </properties>
+
+
+</project>

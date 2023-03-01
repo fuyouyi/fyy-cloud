@@ -9,27 +9,29 @@
     <packaging>pom</packaging>
     <version>1.0</version>
 
+    <description>Fyy微服务架构</description>
+
     <modules>
+        <module>fyy-base-common</module>
+        <module>fyy-business-common</module>
     </modules>
 
     <parent>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-starter-parent</artifactId>
-        <version>2.6.6</version>
+        <version>2.7.9</version>
     </parent>
 
     <properties>
+        <java.version>1.8</java.version>
+        <spring-boot.version>2.7.9</spring-boot.version>
+        <spring.cloud.version>2021.0.5</spring.cloud.version>
+        <spring.cloud.alibaba.version>2021.1</spring.cloud.alibaba.version>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
-        <java.version>1.8</java.version>
-        <spring.cloud.version>2021.0.1</spring.cloud.version>
-        <spring.cloud.alibaba.version>2021.0.1.0</spring.cloud.alibaba.version>
-        <spring.boot.version>2.6.13.RELEASE</spring.boot.version>
-        <knife4j.version>3.0.3</knife4j.version>
-        <lombok.version>1.18.22</lombok.version>
-        <guava.version>20.0</guava.version>
 
-        <org.apache.poi.version>3.17</org.apache.poi.version>
+        <lombok.version>1.18.26</lombok.version>
+        <fastjson2.version>2.0.24</fastjson2.version>
     </properties>
 
     <dependencies>
@@ -52,11 +54,10 @@
             <artifactId>lombok</artifactId>
             <version>${lombok.version}</version>
         </dependency>
-
         <dependency>
-            <groupId>com.alibaba</groupId>
-            <artifactId>fastjson</artifactId>
-            <version>1.2.83</version>
+            <groupId>com.alibaba.fastjson2</groupId>
+            <artifactId>fastjson2</artifactId>
+            <version>${fastjson2.version}</version>
         </dependency>
     </dependencies>
 
@@ -82,25 +83,30 @@
                 <artifactId>lombok</artifactId>
                 <version>${lombok.version}</version>
             </dependency>
+            <dependency>
+                <groupId>com.alibaba.fastjson2</groupId>
+                <artifactId>fastjson2</artifactId>
+                <version>${fastjson2.version}</version>
+            </dependency>
         </dependencies>
     </dependencyManagement>
-
 
     <repositories>
         <repository>
             <id>public</id>
             <name>aliyun nexus</name>
-            <url>http://maven.aliyun.com/nexus/content/groups/public/</url>
+            <url>https://maven.aliyun.com/repository/public</url>
             <releases>
                 <enabled>true</enabled>
             </releases>
         </repository>
     </repositories>
+
     <pluginRepositories>
         <pluginRepository>
             <id>public</id>
             <name>aliyun nexus</name>
-            <url>http://maven.aliyun.com/nexus/content/groups/public/</url>
+            <url>https://maven.aliyun.com/repository/public</url>
             <releases>
                 <enabled>true</enabled>
             </releases>
@@ -110,4 +116,33 @@
         </pluginRepository>
     </pluginRepositories>
 
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <configuration>
+                    <source>${java.version}</source>
+                    <target>${java.version}</target>
+                    <encoding>${project.build.sourceEncoding}</encoding>
+                </configuration>
+            </plugin>
+        </plugins>
+        <pluginManagement>
+            <plugins>
+                <plugin>
+                    <groupId>org.springframework.boot</groupId>
+                    <artifactId>spring-boot-maven-plugin</artifactId>
+                    <version>${spring-boot.version}</version>
+                    <executions>
+                        <execution>
+                            <goals>
+                                <goal>repackage</goal>
+                            </goals>
+                        </execution>
+                    </executions>
+                </plugin>
+            </plugins>
+        </pluginManagement>
+    </build>
 </project>
