@@ -14,6 +14,7 @@
     <modules>
         <module>fyy-base-common</module>
         <module>fyy-business-common</module>
+        <module>fyy-gateway</module>
     </modules>
 
     <parent>
@@ -32,6 +33,7 @@
 
         <lombok.version>1.18.26</lombok.version>
         <fastjson2.version>2.0.24</fastjson2.version>
+        <knife4j.version>3.0.3</knife4j.version>
     </properties>
 
     <dependencies>

@@ -20,9 +20,7 @@
     </modules>
 
     <properties>
-        <knife4j.version>3.0.3</knife4j.version>
         <guava.version>20.0</guava.version>
-
         <org.apache.poi.version>3.17</org.apache.poi.version>
     </properties>
 
